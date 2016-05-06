@@ -1,0 +1,28 @@
+/* hide more by default this will prevent it from flashing on page load */
+.more {
+    display: none;
+}
+/* handle animation and display for the more links */
+.morecontent .content {
+    overflow: hidden;
+    display: block;
+    transition: max-height 1s;
+    margin-top: 35px;  /* leave room for link */
+}
+.morecontent.closed .content {
+    max-height: 0;
+}
+.lesslink, .morelink {
+    transition: opacity 1s;
+    /* absolute position so they go on top of each other */
+    position: absolute;
+}
+.morecontent .morelink,
+.morecontent.closed .lesslink {
+    opacity: 0;
+}
+.morecontent .lesslink,
+.morecontent.closed .morelink {
+    opacity: 1;
+}
+
